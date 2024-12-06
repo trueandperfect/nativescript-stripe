@@ -1,3 +1,16 @@
+android {
+    defaultConfig {
+      minSdkVersion 21
+    }
+  packagingOptions {
+    pickFirst 'META-INF/stripe_release.kotlin_module'
+  }
+}
 dependencies {
-    implementation 'com.stripe:stripe-android:12.0.1'
+  implementation('com.stripe:stripe-android:20.17.0'){
+    transitive = true
+  }
+  implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+  implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
+  implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 }
